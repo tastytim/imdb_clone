@@ -11,28 +11,27 @@ class CreateMoviesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('movies', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->integer('year');
-            $table->string('poster');
-            $table->time('duration');
-            $table->string('trailer_url');
-            $table->foreignId('pegi_id')->references('id')->on('pegis');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('movies', function (Blueprint $table) {
+    //         // $table->id();
+    //         // $table->string('title');
+    //         // $table->text('description');
+    //         // $table->integer('year');
+    //         // $table->string('poster');
+    //         // $table->time('duration');
+    //         // $table->string('trailer_url');
+    //         // $table->timestamps();
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('movies');
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+    //     Schema::dropIfExists('movies');
+    // }
 }
