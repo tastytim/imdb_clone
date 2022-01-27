@@ -13,7 +13,7 @@ class UpdateMoviesTable extends Migration
      */
     public function up()
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::table('movies', function (Blueprint $table) {
             $table->foreignId('pegi_id')->nullable()->references('id')->on('pegis');
         });
         
@@ -26,6 +26,9 @@ class UpdateMoviesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('movies', function (Blueprint $table) {
+            $table->dropForeign('pegi_id');
+            $table->dropColumn('pegi_id');
+        });
     }
 }
