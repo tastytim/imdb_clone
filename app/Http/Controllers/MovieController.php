@@ -23,7 +23,10 @@ class MovieController extends Controller
                         reprehenderit molestiae ut ut quas totam
                         nostrum rerum est autem sunt rem eveniet architecto</p>",
                 "year" => 2019,
+
                 "poster" => "https://picsum.photos/id/3/400/400",
+
+                
                 "duration" =>  "01:20",
                 "trailer_url" => "https://www.youtube.com/watch?v=ejsE5Smp3io",
                 "pegi_id" => 1

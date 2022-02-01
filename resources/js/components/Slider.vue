@@ -1,4 +1,5 @@
 <template>
+
         
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -9,6 +10,8 @@
                 :key="movie.id">
                 <img :src="movie.poster" class="d-block w-100" alt="..." />
               </div>
+
+   
             </div>
             <button class="carousel-control-prev" type="button"
               data-target="#carouselExampleControls"
@@ -40,9 +43,11 @@
 
 <script>
 export default {
+
   name:"Slider",
   props: {
       dataList: Array,
   }
+
 };
 </script>

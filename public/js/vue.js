@@ -1999,18 +1999,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    dataList: Array
+    dataList: Array,
   }
 });
 
@@ -2523,6 +2514,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+
   return _c(
     "div",
     {
@@ -2557,6 +2549,7 @@ var render = function () {
       _vm._m(1),
     ]
   )
+  
 }
 var staticRenderFns = [
   function () {
@@ -2578,6 +2571,7 @@ var staticRenderFns = [
           staticClass: "carousel-control-prev-icon",
           attrs: { "aria-hidden": "true" },
         }),
+
         _vm._v(" "),
         _c("span", { staticClass: "visually-hidden" }, [_vm._v("Previous")]),
       ]
