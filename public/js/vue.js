@@ -1977,19 +1977,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Slider",
+  props: {
+    dataList: Array
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SliderList.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SliderList.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 //
 //
 //
@@ -2004,9 +2009,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {},
-  data: function data() {
-    return {};
+  props: {
+    dataList: Array
   }
 });
 
@@ -2519,105 +2523,133 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      staticClass: "carousel slide",
+      attrs: { id: "carouselExampleControls", "data-ride": "carousel" },
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "carousel-inner" },
+        _vm._l(_vm.dataList, function (movie, i) {
+          return _c(
+            "div",
+            {
+              key: movie.id,
+              staticClass: "carousel-item",
+              class: { active: i === 0 },
+            },
+            [
+              _c("img", {
+                staticClass: "d-block w-100",
+                attrs: { src: movie.poster, alt: "..." },
+              }),
+            ]
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+    ]
+  )
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-2" }),
+    return _c(
+      "button",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          type: "button",
+          "data-target": "#carouselExampleControls",
+          "data-slide": "prev",
+        },
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "col-8" }, [
-          _c("div", [
-            _c(
-              "div",
-              {
-                staticClass: "carousel slide",
-                attrs: {
-                  id: "carouselExampleControls",
-                  "data-bs-ride": "carousel",
-                },
-              },
-              [
-                _c("div", { staticClass: "carousel-inner" }, [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "carousel-control-prev",
-                    attrs: {
-                      type: "button",
-                      "data-bs-target": "#carouselExampleControls",
-                      "data-bs-slide": "prev",
-                    },
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "carousel-control-prev-icon",
-                      attrs: { "aria-hidden": "true" },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "visually-hidden" }, [
-                      _vm._v("Previous"),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "carousel-control-next",
-                    attrs: {
-                      type: "button",
-                      "data-bs-target": "#carouselExampleControls",
-                      "data-bs-slide": "next",
-                    },
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "carousel-control-next-icon",
-                      attrs: { "aria-hidden": "true" },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "visually-hidden" }, [
-                      _vm._v("Next"),
-                    ]),
-                  ]
-                ),
-              ]
-            ),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-2" }),
-    ])
+        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Previous")]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          type: "button",
+          "data-target": "#carouselExampleControls",
+          "data-slide": "next",
+        },
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" },
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
+      ]
+    )
   },
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "ul",
+    { staticClass: "list-group" },
+    _vm._l(_vm.dataList, function (movie) {
+      return _c(
+        "li",
+        { key: movie.id, staticClass: "list-group-item d-flex" },
+        [
+          _c("img", {
+            staticClass: "img-thumbnail me-3",
+            staticStyle: { width: "50px", height: "50px" },
+            attrs: { src: movie.poster },
+          }),
+          _vm._v("\n    " + _vm._s(movie.title) + "\n  "),
+        ]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -14940,6 +14972,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/SliderList.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/SliderList.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SliderList.vue?vue&type=template&id=a3816b6c& */ "./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c&");
+/* harmony import */ var _SliderList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SliderList.vue?vue&type=script&lang=js& */ "./resources/js/components/SliderList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SliderList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/SliderList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/SliderList.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/SliderList.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SliderList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SliderList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SliderList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SliderList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SliderList.vue?vue&type=template&id=a3816b6c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SliderList.vue?vue&type=template&id=a3816b6c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SliderList_vue_vue_type_template_id_a3816b6c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -14990,6 +15091,7 @@ window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 //  Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('slider', __webpack_require__(/*! ./components/Slider.vue */ "./resources/js/components/Slider.vue")["default"]);
+Vue.component('sliderList', __webpack_require__(/*! ./components/SliderList.vue */ "./resources/js/components/SliderList.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -15013,7 +15115,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\tasty\Documents\boolean\50-laravel\bool-imdb\nome_progetto\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\CorsoBoolean\imdb_clone\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

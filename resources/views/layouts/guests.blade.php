@@ -10,7 +10,7 @@
     <title>@yield('title_page')</title>
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/vue.js') }}" defer></script>
 
     <!-- Fonts -->
