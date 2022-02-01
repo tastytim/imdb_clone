@@ -1,5 +1,5 @@
-@include('layouts.public');
+@extends('layouts.guests');
 
 @section('content')
-    <h1>home guest</h1>
+    <slider></slider>
 @endsection
