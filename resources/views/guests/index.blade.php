@@ -1,5 +1,5 @@
 @extends('layouts.guests');
 
 @section('content')
-    <slider></slider>
+    <slider :data-list="{{json_encode($MoviesList)}}"></slider>
 @endsection

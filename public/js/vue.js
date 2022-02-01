@@ -1994,16 +1994,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    dataList: Array
+  },
   components: {},
   data: function data() {
     return {};
@@ -2519,103 +2513,101 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-2" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-8" }, [
+        _c("div", [
+          _c(
+            "div",
+            {
+              staticClass: "carousel slide",
+              attrs: { id: "carouselExampleControls", "data-ride": "carousel" },
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "carousel-inner" },
+                _vm._l(_vm.dataList, function (movie, i) {
+                  return _c(
+                    "div",
+                    {
+                      key: movie.id,
+                      staticClass: "carousel-item",
+                      class: { active: i === 0 },
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "d-block w-100",
+                        attrs: { src: movie.poster, alt: "" },
+                      }),
+                    ]
+                  )
+                }),
+                0
+              ),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1),
+            ]
+          ),
+        ]),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-2" }),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-2" }),
+    return _c(
+      "button",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          type: "button",
+          "data-target": "#carouselExampleControls",
+          "data-slide": "prev",
+        },
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" },
+        }),
         _vm._v(" "),
-        _c("div", { staticClass: "col-8" }, [
-          _c("div", [
-            _c(
-              "div",
-              {
-                staticClass: "carousel slide",
-                attrs: {
-                  id: "carouselExampleControls",
-                  "data-bs-ride": "carousel",
-                },
-              },
-              [
-                _c("div", { staticClass: "carousel-inner" }, [
-                  _c("div", { staticClass: "carousel-item active" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "carousel-item" }, [
-                    _c("img", {
-                      staticClass: "d-block w-100",
-                      attrs: { src: "", alt: "..." },
-                    }),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "carousel-control-prev",
-                    attrs: {
-                      type: "button",
-                      "data-bs-target": "#carouselExampleControls",
-                      "data-bs-slide": "prev",
-                    },
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "carousel-control-prev-icon",
-                      attrs: { "aria-hidden": "true" },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "visually-hidden" }, [
-                      _vm._v("Previous"),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "carousel-control-next",
-                    attrs: {
-                      type: "button",
-                      "data-bs-target": "#carouselExampleControls",
-                      "data-bs-slide": "next",
-                    },
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "carousel-control-next-icon",
-                      attrs: { "aria-hidden": "true" },
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "visually-hidden" }, [
-                      _vm._v("Next"),
-                    ]),
-                  ]
-                ),
-              ]
-            ),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-2" }),
-    ])
+        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Previous")]),
+      ]
+    )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          type: "button",
+          "data-target": "#carouselExampleControls",
+          "data-slide": "next",
+        },
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" },
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "visually-hidden" }, [_vm._v("Next")]),
+      ]
+    )
   },
 ]
 render._withStripped = true

@@ -7,36 +7,27 @@
                     <div
                         id="carouselExampleControls"
                         class="carousel slide"
-                        data-bs-ride="carousel"
+                        data-ride="carousel"
                     >
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+                            <div
+                                :class="{ active: i === 0 }"
+                                class="carousel-item"
+                                v-for="(movie, i) in dataList"
+                                :key="movie.id"
+                            >
                                 <img
-                                    src=""
+                                    :src="movie.poster"
                                     class="d-block w-100"
-                                    alt="..."
-                                />
-                            </div>
-                            <div class="carousel-item">
-                                <img
-                                    src=""
-                                    class="d-block w-100"
-                                    alt="..."
-                                />
-                            </div>
-                            <div class="carousel-item">
-                                <img
-                                    src=""
-                                    class="d-block w-100"
-                                    alt="..."
+                                    alt=""
                                 />
                             </div>
                         </div>
                         <button
                             class="carousel-control-prev"
                             type="button"
-                            data-bs-target="#carouselExampleControls"
-                            data-bs-slide="prev"
+                            data-target="#carouselExampleControls"
+                            data-slide="prev"
                         >
                             <span
                                 class="carousel-control-prev-icon"
@@ -47,8 +38,8 @@
                         <button
                             class="carousel-control-next"
                             type="button"
-                            data-bs-target="#carouselExampleControls"
-                            data-bs-slide="next"
+                            data-target="#carouselExampleControls"
+                            data-slide="next"
                         >
                             <span
                                 class="carousel-control-next-icon"
@@ -66,6 +57,9 @@
 
 <script>
 export default {
+    props: {
+        dataList: Array,
+    },
     components: {},
     data() {
         return {};

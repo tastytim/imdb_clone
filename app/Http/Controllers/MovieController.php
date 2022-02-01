@@ -23,7 +23,7 @@ class MovieController extends Controller
                         reprehenderit molestiae ut ut quas totam
                         nostrum rerum est autem sunt rem eveniet architecto</p>",
                 "year" => 2019,
-                "poster" => "https://picsum.photos/400/400",
+                "poster" => "https://picsum.photos/id/1/400/400",
                 "duration" =>  "01:20",
                 "trailer_url" => "https://www.youtube.com/watch?v=ejsE5Smp3io",
                 "pegi_id" => 1
@@ -37,7 +37,7 @@ class MovieController extends Controller
                         reprehenderit molestiae ut ut quas totam
                         nostrum rerum est autem sunt rem eveniet architecto</p>",
                 "year" => 2020,
-                "poster" => "https://picsum.photos/400/400",
+                "poster" => "https://picsum.photos/id/2/400/400",
                 "duration" =>  "01:40",
                 "trailer_url" => "https://www.youtube.com/watch?v=Ku_IseK3xTc",
                 "pegi_id" => 1
@@ -50,7 +50,7 @@ class MovieController extends Controller
                         reprehenderit molestiae ut ut quas totam
                         nostrum rerum est autem sunt rem eveniet architecto</p>",
                 "year" => 2019,
-                "poster" => "https://picsum.photos/400/400",
+                "poster" => "https://picsum.photos/id/3/400/400",
                 "duration" =>  "02:20",
                 "trailer_url" => "https://www.youtube.com/watch?v=PA24tnAcuQg",
                 "pegi_id" => 1
