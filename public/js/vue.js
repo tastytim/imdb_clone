@@ -1977,6 +1977,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Slider",
   props: {
@@ -1999,9 +2002,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    dataList: Array,
+    dataList: Array
   }
 });
 
@@ -2514,7 +2526,6 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-
   return _c(
     "div",
     {
@@ -2549,7 +2560,6 @@ var render = function () {
       _vm._m(1),
     ]
   )
-  
 }
 var staticRenderFns = [
   function () {
@@ -2571,7 +2581,6 @@ var staticRenderFns = [
           staticClass: "carousel-control-prev-icon",
           attrs: { "aria-hidden": "true" },
         }),
-
         _vm._v(" "),
         _c("span", { staticClass: "visually-hidden" }, [_vm._v("Previous")]),
       ]
@@ -15109,7 +15118,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\anto-\Desktop\CorsoBoolean\imdb_clone\resources\js\vue.js */"./resources/js/vue.js");
+module.exports = __webpack_require__(/*! C:\Users\tasty\Documents\boolean\50-laravel\bool-imdb\nome_progetto\resources\js\vue.js */"./resources/js/vue.js");
 
 
 /***/ })

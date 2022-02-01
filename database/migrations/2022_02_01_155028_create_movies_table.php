@@ -21,7 +21,6 @@ class CreateMoviesTable extends Migration
             $table->string('poster');
             $table->time('duration');
             $table->string('trailer_url');
-            /* $table->foreignId('pegi_id')->references('id')->on('pegis'); */
             $table->timestamps();
         });
     }
