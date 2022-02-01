@@ -12,7 +12,7 @@ class GenreSeeder extends Seeder
      */
     public function run()
     {
-        $genreList = ['', '','','',''];
+        $genreList = ['Commedia', 'Documentario','Avventura','Horror','Thriller','Western'];
 
 
         
