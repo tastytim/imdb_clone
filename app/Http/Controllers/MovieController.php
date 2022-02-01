@@ -56,7 +56,7 @@ class MovieController extends Controller
                 "pegi_id" => 1
             ],
         ];
-        return $MoviesList;
+        return response()->json($MoviesList);
     }
 
     /**
