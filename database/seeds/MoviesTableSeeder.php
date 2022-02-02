@@ -21,7 +21,6 @@ class MoviesTableSeeder extends Seeder
           $newMovie->poster = $faker->imageUrl(640, 480, 'movies', true);
           $newMovie->duration = $faker->dateTime();
           $newMovie->trailer_url= $faker->imageUrl(640, 480, 'animals', true);
-          $newMovie->pegi_id = 0;
           $newMovie->save();
         }
     }
