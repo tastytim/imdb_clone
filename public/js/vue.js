@@ -2011,9 +2011,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    dataList: Array
+  data: function data() {
+    return {
+      movies: [],
+      currentPage: 1,
+      lastPage: null
+    };
+  },
+  methods: {
+    getData: function getData() {
+      var _this = this;
+
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios.get("/api/movies?page=" + page).then(function (resp) {
+        _this.movies = resp.data.data;
+        _this.currentPage = resp.data.current_page;
+        _this.lastPage = resp.data.last_page;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getData();
   }
 });
 
@@ -2632,25 +2678,95 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "ul",
-    { staticClass: "list-group" },
-    _vm._l(_vm.dataList, function (movie) {
-      return _c(
-        "li",
-        { key: movie.id, staticClass: "list-group-item d-flex" },
-        [
-          _c("img", {
-            staticClass: "img-thumbnail me-3",
-            staticStyle: { width: "50px", height: "50px" },
-            attrs: { src: movie.poster },
-          }),
-          _vm._v("\n    " + _vm._s(movie.title) + "\n  "),
-        ]
-      )
-    }),
-    0
-  )
+  return _c("div", [
+    _c("h1", [_vm._v("Lista movies")]),
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "list-group" },
+      _vm._l(_vm.movies, function (movie) {
+        return _c(
+          "li",
+          { key: movie.id, staticClass: "list-group-item d-flex" },
+          [
+            _c("img", {
+              staticClass: "img-thumbnail me-3",
+              staticStyle: { width: "50px", height: "50px" },
+              attrs: { src: movie.poster },
+            }),
+            _vm._v("\n            " + _vm._s(movie.title) + "\n        "),
+          ]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "pagination" },
+      [
+        _c("li", [
+          _c(
+            "button",
+            {
+              staticClass: "page-link",
+              on: {
+                click: function ($event) {
+                  _vm.currentPage = 1
+                    ? (_vm.currentPage = 1)
+                    : undefined
+                },
+              },
+            },
+            [_vm._v("\n                Indietro\n            ")]
+          ),
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.lastPage, function (page) {
+          return _c(
+            "li",
+            {
+              key: page,
+              staticClass: "page-item",
+              class: { active: _vm.currentPage === page },
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "page-link",
+                  on: {
+                    click: function ($event) {
+                      return _vm.getData(page)
+                    },
+                  },
+                },
+                [_vm._v(_vm._s(page))]
+              ),
+            ]
+          )
+        }),
+        _vm._v(" "),
+        _c("li", [
+          _c(
+            "button",
+            {
+              staticClass: "page-link",
+              on: {
+                click: function ($event) {
+                  _vm.currentPage = _vm.lastPage
+                    ? (_vm.currentPage = _vm.lastPage)
+                    : _vm.getData(_vm.currentPage - 1)
+                },
+              },
+            },
+            [_vm._v("\n                Avanti\n            ")]
+          ),
+        ]),
+      ],
+      2
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

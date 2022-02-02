@@ -15,7 +15,7 @@ class MoviesController extends Controller
      */
     public function index()
     {
-        $movies = Movie::with('genres')->get();
+        $movies = Movie::with('genres')->orderBy('created_at','desc')->paginate(5);
         return response()->json($movies);
 
     }
