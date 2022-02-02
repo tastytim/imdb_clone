@@ -6,21 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
-    protected $fillable = ['id','title','description','year','poster','duration','trailer_url','pegi_id'];
+    protected $fillable = ['id','title','description','year','poster','duration','trailer_url'];
 
-    public function categories(){
-        return $this->belongsToMany(Category::class);
-    }
+    
 
-    public function movies(){
-        return $this->belongsToMany(Pegi::class);
-    }
-
-    public function ratings(){
-        return $this->belongsTo(Rating::class);
-    }
+    
     public function genres(){
-        return $this->belongsTo(Genre::class);
+        return $this->belongsToMany(Genre::class, 'movie_genre');
     }
     
 }
