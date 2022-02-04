@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/movies', 'Api\MoviesController@index');
+Route::get('/genres', 'Api\GenresController@index');

@@ -2038,12 +2038,78 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       movies: [],
       currentPage: 1,
-      lastPage: null
+      lastPage: null,
+      genres: [],
+      title: null,
+      selected: {
+        genres: [],
+        title: null
+      }
     };
   },
   methods: {
@@ -2051,15 +2117,25 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get("/api/movies?page=" + page).then(function (resp) {
+      axios.get("/api/movies?page=" + page, {
+        params: this.selected
+      }).then(function (resp) {
         _this.movies = resp.data.data;
         _this.currentPage = resp.data.current_page;
         _this.lastPage = resp.data.last_page;
+      });
+    },
+    getGenres: function getGenres() {
+      var _this2 = this;
+
+      axios.get("/api/genres").then(function (resp) {
+        _this2.genres = resp.data;
       });
     }
   },
   mounted: function mounted() {
     this.getData();
+    this.getGenres();
   }
 });
 
@@ -2678,95 +2754,242 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("h1", [_vm._v("Lista movies")]),
-    _vm._v(" "),
-    _c(
-      "ul",
-      { staticClass: "list-group" },
-      _vm._l(_vm.movies, function (movie) {
-        return _c(
-          "li",
-          { key: movie.id, staticClass: "list-group-item d-flex" },
-          [
-            _c("img", {
-              staticClass: "img-thumbnail me-3",
-              staticStyle: { width: "50px", height: "50px" },
-              attrs: { src: movie.poster },
-            }),
-            _vm._v("\n            " + _vm._s(movie.title) + "\n        "),
-          ]
-        )
+  return _c(
+    "div",
+    [
+      _c("h1", [_vm._v("Filtro boolean")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.selected.title,
+            expression: "selected.title",
+          },
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", placeholder: "Titolo", name: "title" },
+        domProps: { value: _vm.selected.title },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.selected, "title", $event.target.value)
+          },
+        },
       }),
-      0
-    ),
-    _vm._v(" "),
-    _c(
-      "ul",
-      { staticClass: "pagination" },
-      [
-        _c("li", [
-          _c(
-            "button",
+      _vm._v(" "),
+      _c(
+        "select",
+        {
+          directives: [
             {
-              staticClass: "page-link",
-              on: {
-                click: function ($event) {
-                  _vm.currentPage = 1
-                    ? (_vm.currentPage = 1)
-                    : undefined
-                },
+              name: "model",
+              rawName: "v-model",
+              value: _vm.selected.genres,
+              expression: "selected.genres",
+            },
+          ],
+          staticClass: "form-control my-2",
+          attrs: {
+            "aria-label": "Default select example",
+            name: "genres",
+            multiple: "",
+          },
+          on: {
+            change: function ($event) {
+              var $$selectedVal = Array.prototype.filter
+                .call($event.target.options, function (o) {
+                  return o.selected
+                })
+                .map(function (o) {
+                  var val = "_value" in o ? o._value : o.value
+                  return val
+                })
+              _vm.$set(
+                _vm.selected,
+                "genres",
+                $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+              )
+            },
+          },
+        },
+        [
+          _c("option", { attrs: { selected: "" } }, [_vm._v("Select genre")]),
+          _vm._v(" "),
+          _vm._l(_vm.genres, function (genre) {
+            return _c(
+              "option",
+              { key: genre.id, domProps: { value: genre.id } },
+              [_vm._v("\n            " + _vm._s(genre.name) + "\n        ")]
+            )
+          }),
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.genres, function (genre) {
+        return _c("div", { key: genre.id, staticClass: "form-check" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.selected.genres,
+                expression: "selected.genres",
+              },
+            ],
+            staticClass: "form-check-input",
+            attrs: { "option.checked": "true", type: "checkbox", id: genre.id },
+            domProps: {
+              value: genre.id,
+              checked: Array.isArray(_vm.selected.genres)
+                ? _vm._i(_vm.selected.genres, genre.id) > -1
+                : _vm.selected.genres,
+            },
+            on: {
+              change: function ($event) {
+                var $$a = _vm.selected.genres,
+                  $$el = $event.target,
+                  $$c = $$el.checked ? true : false
+                if (Array.isArray($$a)) {
+                  var $$v = genre.id,
+                    $$i = _vm._i($$a, $$v)
+                  if ($$el.checked) {
+                    $$i < 0 &&
+                      _vm.$set(_vm.selected, "genres", $$a.concat([$$v]))
+                  } else {
+                    $$i > -1 &&
+                      _vm.$set(
+                        _vm.selected,
+                        "genres",
+                        $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                      )
+                  }
+                } else {
+                  _vm.$set(_vm.selected, "genres", $$c)
+                }
               },
             },
-            [_vm._v("\n                Indietro\n            ")]
+          }),
+          _vm._v(" "),
+          _c(
+            "label",
+            { staticClass: "form-check-label", attrs: { for: genre.id } },
+            [_vm._v("\n            " + _vm._s(genre.name) + "\n        ")]
           ),
-        ]),
-        _vm._v(" "),
-        _vm._l(_vm.lastPage, function (page) {
+        ])
+      }),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary my-2",
+          on: {
+            click: function ($event) {
+              return _vm.getData()
+            },
+          },
+        },
+        [_vm._v("Filtra")]
+      ),
+      _vm._v(" "),
+      _c("h1", [_vm._v("Lista movies")]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "list-group" },
+        _vm._l(_vm.movies, function (movie) {
           return _c(
             "li",
-            {
-              key: page,
-              staticClass: "page-item",
-              class: { active: _vm.currentPage === page },
-            },
+            { key: movie.id, staticClass: "list-group-item d-flex" },
             [
-              _c(
-                "button",
-                {
-                  staticClass: "page-link",
-                  on: {
-                    click: function ($event) {
-                      return _vm.getData(page)
-                    },
-                  },
-                },
-                [_vm._v(_vm._s(page))]
-              ),
+              _c("img", {
+                staticClass: "img-thumbnail me-3",
+                staticStyle: { width: "50px", height: "50px" },
+                attrs: { src: movie.poster },
+              }),
+              _vm._v("\n            " + _vm._s(movie.title) + "\n        "),
             ]
           )
         }),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "button",
-            {
-              staticClass: "page-link",
-              on: {
-                click: function ($event) {
-                  _vm.currentPage = _vm.lastPage
-                    ? (_vm.currentPage = _vm.lastPage)
-                    : _vm.getData(_vm.currentPage - 1)
+        0
+      ),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "pagination" },
+        [
+          _c("li", [
+            _c(
+              "button",
+              {
+                staticClass: "page-link",
+                on: {
+                  click: function ($event) {
+                    _vm.currentPage = 1
+                      ? (_vm.currentPage = 1)
+                      : undefined
+                  },
                 },
               },
-            },
-            [_vm._v("\n                Avanti\n            ")]
-          ),
-        ]),
-      ],
-      2
-    ),
-  ])
+              [_vm._v("\n                Indietro\n            ")]
+            ),
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.lastPage, function (page) {
+            return _c(
+              "li",
+              {
+                key: page,
+                staticClass: "page-item",
+                class: { active: _vm.currentPage === page },
+              },
+              [
+                _c(
+                  "button",
+                  {
+                    staticClass: "page-link",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getData(page)
+                      },
+                    },
+                  },
+                  [
+                    _vm._v(
+                      "\n                " + _vm._s(page) + "\n            "
+                    ),
+                  ]
+                ),
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _c("li", [
+            _c(
+              "button",
+              {
+                staticClass: "page-link",
+                on: {
+                  click: function ($event) {
+                    _vm.currentPage = _vm.lastPage
+                      ? (_vm.currentPage = _vm.lastPage)
+                      : _vm.getData(_vm.currentPage - 1)
+                  },
+                },
+              },
+              [_vm._v("\n                Avanti\n            ")]
+            ),
+          ]),
+        ],
+        2
+      ),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
